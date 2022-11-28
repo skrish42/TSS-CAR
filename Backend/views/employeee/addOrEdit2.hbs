@@ -1,0 +1,74 @@
+        <button onclick="history.back()">Go Back</button>
+<h3 style="text-align: center">{{viewTitle}}</h3>
+<p style="text-align: center;">(<b>Note: </b>Before Booking slots. please ensure the available slots by clicking "View Booked Slots")</p>
+<br>
+
+<form action="/employeee" method="POST" autocomplete="off" style="float:center; margin-left: 170px " >
+<input type="hidden" name="_id" value="{{employeee._id}}">
+    <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" class="form-control" name="fullName" placeholder="Full Name" value="{{employeee.fullName}}" style="height:40px ;width:400px; border-radius: 3px">
+        <div class="text-danger">
+            {{employeee.fullNameError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" placeholder="College Mail Id" value="{{employeee.email}}" style="height:40px ;width:400px; border-radius: 3px">
+        <div class="text-danger">
+            {{employeee.emailError}}</div>
+    </div>
+ 
+        <div class="form-group">
+            <label>Mobile</label>
+            <input type="text" class="form-control" name="mobile" placeholder="Mobile" value="{{employeee.mobile}}" style="height:40px ;width:400px; border-radius: 3px">
+        </div>
+    
+
+    
+        <div class="form-group">
+            <label>Department</label><br>
+            <select id="department" name="department" value="{{employeee.department}}" style="height:40px ;width:400px; border-radius: 3px">
+                <option value="" selected>Choose department</option>
+                <option value="IT">IT</option>
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="EEE">EEE</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Civil">Civil</option>
+                <option value="Mechatronics">Mechatronics</option>
+                <option value="Data Science">Data Science</option>
+                <option value="CSBS">CSBS</option>
+              </select>
+        </div> 
+        
+      
+         <div class="form-group">
+            <label>Software</label><br>
+            <select id="equipment" name="equipment" value="{{employeee.equipment}}" style="height:40px ;width:400px; border-radius: 3px">
+                <option value="" selected>Choose Software</option>
+                <option value="PTC, MATLAB">PTC, MATLAB</option>
+                <option value="COMSOL, AUTOCAD">COMSOL, AUTOCAD</option>
+                <option value="FSR, FUSION 360">FSR, FUSION 360</option>
+                <option value="MAL, MOLDFLOW">MAL, MOLDFLOW</option>
+                <option value="Autodesk Powermill">Autodesk Powermill</option>
+                <option value="MS OFFICE 2019">MS OFFICE 2019</option>
+              </select></div>
+        
+        <div class="form-row">
+        <div class="form-group">
+            <label>Time Slot (Starting Time)</label>
+            <input type="datetime-local" class="form-control" name="timeslots" placeholder="Time Slot" value="{{employeee.timeslots}}" style="height:40px ;width:195px; border-radius: 3px">
+        </div>
+    
+      <div class="form-group">
+            <label>Time Slot (Ending Time)</label>
+            <input type="datetime-local" class="form-control" name="timeslote" placeholder="Time Slot" value="{{employeee.timeslote}}" style="height:40px ;width:195px; border-radius: 3px;">
+        </div>
+    </div>
+
+    <div class="form-group col-md-6"></div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Book Slot</button>
+        <a class="btn btn-secondary" href="/employeee/list2"><i class="fa fa-list-alt"></i> View Booked Slots</a>
+    </div>
+</form>

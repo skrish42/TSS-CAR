@@ -1,0 +1,30 @@
+<h3><a class="btn btn-secondary" href="/employeee"><i class="fa fa-plus"></i> Book Slot</a> Booked Slots</h3>
+<button onclick="history.back()">Go Back</button>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Department</th>
+            <th>Equipment</th>
+            <th>Time Slot (Starting Time)</th>
+            <th>Time Slot (Ending Time)</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.department}}</td>
+            <td>{{this.equipment}}</td>
+            <td>{{this.timeslots}}</td>
+            <td>{{this.timeslote}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
